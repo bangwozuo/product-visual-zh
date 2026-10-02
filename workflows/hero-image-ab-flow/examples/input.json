@@ -1,0 +1,32 @@
+{
+  "product": "便携电热水杯（316L 内胆）",
+  "platform": "抖音",
+  "versions": [
+    {
+      "name": "A 场景卖点版",
+      "text": "晨起 3 分钟，一杯温水。6 小时保温 60 度以上（实验室实测）",
+      "layout": {
+        "canvas": "900x1200", "bg_color": "#F5F1E8",
+        "product_zone": {"x": 90, "y": 430, "w": 720, "h": 620},
+        "blocks": [
+          {"level": "title", "text": "晨起 3 分钟 · 一杯温水", "x": 56, "y": 56, "w": 700, "size": 56, "color": "#2B2B2B", "bold": true},
+          {"level": "subtitle", "text": "6 小时保温 60 度以上（实验室实测）", "x": 56, "y": 150, "w": 700, "size": 34, "color": "#4A4A4A"}
+        ]
+      },
+      "days": 4, "impressions": 3200, "clicks": 96
+    },
+    {
+      "name": "B 参数价格版",
+      "text": "316L 不锈钢内胆，限时优惠价 99 元。6 小时保温 60 度以上（实验室实测）",
+      "layout": {
+        "canvas": "900x1200", "bg_color": "#F5F1E8",
+        "product_zone": {"x": 90, "y": 430, "w": 720, "h": 620},
+        "blocks": [
+          {"level": "title", "text": "316L 内胆 · 限时 99 元", "x": 56, "y": 56, "w": 700, "size": 56, "color": "#2B2B2B", "bold": true},
+          {"level": "subtitle", "text": "6 小时保温 60 度以上（实验室实测）", "x": 56, "y": 150, "w": 700, "size": 34, "color": "#4A4A4A"}
+        ]
+      },
+      "days": 4, "impressions": 3050, "clicks": 129
+    }
+  ]
+}

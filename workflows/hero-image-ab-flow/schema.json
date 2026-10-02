@@ -1,0 +1,73 @@
+{
+  "workflow_id": "de_ecom_01_wf02",
+  "name": "主图 A/B 版本生成",
+  "type": "composite",
+  "skill_refs": [
+    "de_ecom_01_sk05",
+    "de_ecom_01_sk04"
+  ],
+  "input": {
+    "type": "object",
+    "required": [
+      "product",
+      "versions"
+    ],
+    "properties": {
+      "product": {
+        "type": "string",
+        "description": "商品名"
+      },
+      "platform": {
+        "type": "string",
+        "description": "投放平台（决定版式与文字面积规则）"
+      },
+      "versions": {
+        "type": "array",
+        "description": "2-4 版：name / text（主图文案）/ layout（文字块配置，交 copy-layout）/ days·impressions·clicks（测试后回填）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "summary",
+      "steps"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "版本数、版式/合规可上线数、样本门槛、版本比较结论、人工确认点"
+      },
+      "steps": {
+        "type": "array",
+        "description": "各步骤状态与产物路径（含每版落位图与合规扫描）"
+      }
+    },
+    "artifacts": {
+      "report_xlsx": "out/主图AB测试报告.xlsx（版本判定/版式留痕/合规留痕/统计判定）",
+      "report_md": "out/主图AB测试报告.md",
+      "grid_dir": "out/step2_版式栅格/（每版落位图+layout_check.json）",
+      "compliance_dir": "out/step3_文案合规/（每版 precheck.json）",
+      "result_json": "out/ab_flow_result.json"
+    }
+  },
+  "scripts": [
+    "scripts/run_flow.py"
+  ],
+  "constraints": {
+    "min_versions": 2,
+    "single_variable": true,
+    "min_days_per_group": 3,
+    "min_impressions_per_group": 1000,
+    "ctr_benchmark": "2%-5%（<1% 判主图问题，>5% 防图文不符）",
+    "z_critical": 1.96,
+    "forbidden_words_in_text": [
+      "最好",
+      "第一",
+      "最低价",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}

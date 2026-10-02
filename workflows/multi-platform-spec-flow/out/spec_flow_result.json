@@ -1,0 +1,49 @@
+{
+  "flow": "multi-platform-spec-flow",
+  "steps": [
+    {
+      "step": 1,
+      "skill": "white-bg-image-generate",
+      "status": "ok",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out\\step1_白底归一\\白底主图_800x800.png",
+      "dir": "out\\step1_白底归一"
+    },
+    {
+      "step": 2,
+      "skill": "（内置）平台规格计算",
+      "status": "ok",
+      "platforms": 4
+    },
+    {
+      "step": 3,
+      "skill": "（内置）适配示意图",
+      "status": "ok",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out\\各平台画布适配示意图.png"
+    },
+    {
+      "step": 4,
+      "skill": "（内置）上传检查项",
+      "status": "ok"
+    },
+    {
+      "step": 5,
+      "skill": "（人工）逐平台上传确认",
+      "status": "pending"
+    }
+  ],
+  "summary": {
+    "商品": "便携电热水杯（316L 内胆）",
+    "白底主图": "800x800（step1 质检通过）",
+    "适配平台数": 4,
+    "自定平台数": 0,
+    "人工确认点": "step1 质检报告过目 + 逐平台上传结果回填；驳回原因回写规格表",
+    "说明": "缩放比/占比/留白由脚本实测；商品本体零裁切、禁非等比拉伸"
+  },
+  "files": [
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out\\平台适配规格表.xlsx",
+    "out\\平台适配规格报告.md",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out\\各平台画布适配示意图.png",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out\\step1_白底归一\\白底主图_800x800.png"
+  ],
+  "generated_at": "2026-09-30 20:56:57"
+}

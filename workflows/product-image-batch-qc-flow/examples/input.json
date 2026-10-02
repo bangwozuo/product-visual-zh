@@ -1,0 +1,11 @@
+{
+  "product": "便携手冲咖啡壶套装（SKU: COFFEE-320ML）",
+  "batch_size": 500,
+  "scene": {
+    "description": "原木桌面晨光场景，旁置咖啡豆与亚麻布",
+    "light_dir": "upper-left",
+    "color_temp_k": 3800,
+    "canvas": "900x1200"
+  },
+  "defects": {"critical": 0, "major": 1, "minor": 4}
+}

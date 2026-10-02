@@ -1,0 +1,28 @@
+{
+  "product": "便携手冲咖啡壶套装 · 第2屏",
+  "platform": "通用",
+  "purpose": "详情模块",
+  "canvas": "750x850",
+  "bg_color": "#F7F5F0",
+  "blocks": [
+    {
+      "level": "title",
+      "text": "15Bar 恒压萃取",
+      "x": 56,
+      "y": 56,
+      "w": 638,
+      "size": 38,
+      "color": "#2B2B2B",
+      "bold": true
+    },
+    {
+      "level": "subtitle",
+      "text": "每杯油脂稳定，实测浓度 18%（SC",
+      "x": 56,
+      "y": 150,
+      "w": 638,
+      "size": 27,
+      "color": "#4A4A4A"
+    }
+  ]
+}

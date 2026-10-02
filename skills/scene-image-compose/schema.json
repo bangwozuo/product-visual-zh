@@ -1,0 +1,97 @@
+{
+  "skill_id": "de_ecom_01_sk02",
+  "name": "场景图合成",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "product_info",
+      "requirement"
+    ],
+    "properties": {
+      "product_info": {
+        "type": "string",
+        "description": "白底图描述、材质（金属/玻璃/哑光/透明）、主色 hex、尺寸感"
+      },
+      "requirement": {
+        "type": "string",
+        "description": "场景与情绪（厨房晨光/户外黄昏等）、目标平台与画布尺寸"
+      },
+      "composition": {
+        "type": "string",
+        "description": "构图偏好：商品占比（40%-60%）、朝向留白方向"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "strategy",
+      "positive_prompt",
+      "negative_prompt",
+      "light_params",
+      "perspective_params",
+      "lock_terms",
+      "qc_checklist",
+      "compliance_notes"
+    ],
+    "properties": {
+      "strategy": {
+        "type": "string",
+        "description": "图层贴回（商品白底图+AI 背景）或纯生成式，及选择理由"
+      },
+      "positive_prompt": {
+        "type": "string",
+        "description": "完整可复制的正向提示词，含色温数值、机位锁词与商品锁定描述"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "description": "基础项 + 材质专属项 + 商品保护项"
+      },
+      "light_params": {
+        "type": "object",
+        "description": "光源方向 / 色温（K）/ 光比 / 接地阴影方向"
+      },
+      "perspective_params": {
+        "type": "object",
+        "description": "机位高度 / 镜头焦段 / 景深光圈"
+      },
+      "lock_terms": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "商品锁定清单：属性 / 策略 / 验收方式"
+      },
+      "qc_checklist": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "出图后验收清单：光影/透视人眼四查 + fidelity 脚本实测项"
+      },
+      "compliance_notes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "AI 标识、肖像授权、第三方品牌与虚假效果注意项"
+      }
+    }
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "single_light_source": true,
+    "color_temp_range_k": [3000, 6500],
+    "lighting_ratio": "2:1 - 3:1",
+    "product_area_ratio": "40%-60%",
+    "logo_products_layer_composite": true,
+    "ai_label_required": true,
+    "human_review_required": true,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "skill_id": "de_ecom_01_sk05",
+  "name": "文案排版",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "product",
+      "platform",
+      "canvas",
+      "blocks"
+    ],
+    "properties": {
+      "product": {
+        "type": "string",
+        "description": "商品名"
+      },
+      "platform": {
+        "type": "string",
+        "description": "投放平台：淘宝/天猫/抖音/小红书/拼多多"
+      },
+      "purpose": {
+        "type": "string",
+        "description": "用途：主图/商品卡/详情模块（决定文字面积上限）"
+      },
+      "canvas": {
+        "type": "string",
+        "description": "画布尺寸，如 900x1200、800x800"
+      },
+      "bg_color": {
+        "type": "string",
+        "description": "背景色 hex，对比度按它实测"
+      },
+      "product_zone": {
+        "type": "object",
+        "description": "商品区 {x,y,w,h}；文字块不得与其重叠"
+      },
+      "blocks": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "文字块：level（title/subtitle/bullet）/text/x/y/w/size/color/bold"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "summary",
+      "blocks"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "整体判定、文字面积与上限、安全边距、五项检查结果"
+      },
+      "blocks": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "文字块明细：字号达标/对比度实测值/边距内/压商品区"
+      }
+    },
+    "artifacts": {
+      "grid_png": "out/版式栅格示意图.png（12 栏栅格 + 安全边距 + 商品区 + 文字块落位）",
+      "report_md": "out/版式检查报告.md（含逐项整改指令）",
+      "result_json": "out/layout_check.json"
+    }
+  },
+  "scripts": [
+    "scripts/grid_preview.py"
+  ],
+  "constraints": {
+    "title_min_ratio": "0.05 * 画布宽",
+    "subtitle_min_ratio": "0.035 * 画布宽",
+    "bullet_min_ratio": "0.03 * 画布宽",
+    "contrast_body": ">=4.5:1",
+    "contrast_title_bold": ">=3.0:1",
+    "douyin_text_area_max": "20%",
+    "taobao_main_image_text": "除品牌 Logo 外禁文字",
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}

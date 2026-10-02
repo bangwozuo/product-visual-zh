@@ -1,0 +1,56 @@
+{
+  "flow": "detail-page-layout-flow",
+  "steps": [
+    {
+      "step": 1,
+      "skill": "（内置）五屏结构编排",
+      "status": "ok",
+      "screens": 6,
+      "total_height": 4850
+    },
+    {
+      "step": 2,
+      "skill": "copy-layout",
+      "status": "ok",
+      "screens": [
+        "第1屏",
+        "第2屏"
+      ]
+    },
+    {
+      "step": 3,
+      "skill": "platform-compliance-precheck",
+      "status": "ok",
+      "red_lines": 0
+    },
+    {
+      "step": 4,
+      "skill": "（内置）长图规格校验",
+      "status": "ok",
+      "verdict": "✅ 4850px / 上限 8000px"
+    },
+    {
+      "step": 5,
+      "skill": "（人工）核对后交付制作",
+      "status": "pending"
+    }
+  ],
+  "summary": {
+    "商品": "便携手冲咖啡壶套装",
+    "详情页宽度": "750px",
+    "屏数": 6,
+    "总高度": "4850px / 上限 8000px",
+    "长图校验": "✅ 4850px / 上限 8000px",
+    "合规红线": "0（清零才可交付）",
+    "整体判定": "✅ 可交付",
+    "人工确认点": "规格参数与实物核对；背书证据可出示；交付制作前人工过目",
+    "说明": "高度/合规/版式均脚本实测；卖点排序与屏型归属逻辑见 prompt.txt 五屏方法论"
+  },
+  "files": [
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\detail-page-layout-flow\\out\\详情页结构方案.xlsx",
+    "out\\详情页结构方案.md",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\detail-page-layout-flow\\out\\step2_关键屏栅格\\第1屏\\版式栅格示意图.png",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\detail-page-layout-flow\\out\\step2_关键屏栅格\\第2屏\\版式栅格示意图.png"
+  ],
+  "generated_at": "2026-09-30 20:56:50"
+}

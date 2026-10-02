@@ -1,0 +1,51 @@
+name: 商品视觉师
+repo: bangwozuo/product-visual-zh
+legacy_name: 视觉设计师·小图
+version: 0.2.0
+asset_type: prompt-only
+stage: P0
+complexity: M（AI 模特换装为 L 排 P2）
+group: 电商小卖家
+runtime_dependencies: none
+api_key_required: false
+demand_ids:
+  - D01
+  - D26
+
+workflows:
+  - name: 商品图批量生成与质检
+    id: de_ecom_01_wf01
+  - name: 主图 A/B 版本生成
+    id: de_ecom_01_wf02
+  - name: 平台合规预审
+    id: de_ecom_01_wf03
+  - name: 多平台规格一键适配
+    id: de_ecom_01_wf04
+  - name: 详情页排版生成
+    id: de_ecom_01_wf05
+
+skills:
+  - id: white-bg-image-generate
+    name: 白底图生成
+    family: 
+  - id: scene-image-compose
+    name: 场景图合成
+    family: 
+  - id: product-fidelity-check
+    name: 产品保真校验
+    family: 
+  - id: platform-compliance-precheck
+    name: 平台合规预审
+    family: 
+  - id: copy-layout
+    name: 文案排版
+    family: 
+  - id: ai-model-swap
+    name: AI 模特换装
+    family: 
+
+compliance:
+  ai_label_required: true
+  human_review_required: true
+  forbidden_words_check: true
+  official_api_only: true

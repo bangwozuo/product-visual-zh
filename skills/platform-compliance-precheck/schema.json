@@ -1,0 +1,81 @@
+{
+  "skill_id": "de_ecom_01_sk04",
+  "name": "平台合规预审",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": ["text", "platform"],
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "待检文案（标题+副标题+详情页+图上文字，尽量给全）",
+        "maxLength": 5000
+      },
+      "platform": {
+        "type": "string",
+        "description": "目标平台：淘宝 / 天猫 / 抖音 / 小红书 / 拼多多 / 通用",
+        "enum": ["淘宝", "天猫", "抖音", "小红书", "拼多多", "通用"]
+      },
+      "category": {
+        "type": "string",
+        "description": "商品类目，决定启用哪张特有禁词表",
+        "enum": ["化妆品", "食品", "保健品", "医疗器械", "母婴", "教育", "金融", ""]
+      },
+      "image_text": {
+        "type": "string",
+        "description": "主图上的文字内容（用于牛皮癣判定），可先 OCR 再传入"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": ["summary", "hits"],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "预审结论：平台 / 文本量 / 三级计数 / 整体判定",
+        "properties": {
+          "受检平台": {"type": "string"},
+          "受检文本量": {"type": "string"},
+          "红线": {"type": "integer"},
+          "警告": {"type": "integer"},
+          "提示": {"type": "integer"},
+          "整体判定": {"type": "string", "enum": ["通过", "修改后上架", "不建议上架"]}
+        }
+      },
+      "hits": {
+        "type": "array",
+        "description": "违规清单，按级别排序",
+        "items": {
+          "type": "object",
+          "properties": {
+            "级别": {"type": "string", "enum": ["🔴 红线", "🟡 警告", "🔵 提示"]},
+            "原文片段": {"type": "string"},
+            "位置": {"type": "string"},
+            "命中规则": {"type": "string"},
+            "依据": {"type": "string"},
+            "建议改法": {"type": "string"}
+          }
+        }
+      },
+      "need_material": {
+        "type": "array",
+        "description": "需补充的证明材料清单（用于提示级项）",
+        "items": {"type": "string"}
+      }
+    },
+    "x-rendered-from": "capability:compliance_check"
+  },
+  "scripts": {
+    "scan": "scripts/precheck.py",
+    "usage": "python3 scripts/precheck.py --input input.json --outdir out"
+  },
+  "artifacts": ["out/合规预审清单.xlsx", "out/precheck.json"],
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": ["最好", "第一", "100%", "国家级", "独家"],
+    "ai_label_required": true,
+    "human_review_required": true,
+    "no_bypass_advice": true
+  }
+}

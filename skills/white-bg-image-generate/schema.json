@@ -1,0 +1,63 @@
+{
+  "skill_id": "de_ecom_01_sk01",
+  "name": "白底图生成",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "product_info",
+      "requirement"
+    ],
+    "properties": {
+      "product_info": {
+        "type": "string",
+        "description": "商品/素材信息：主体特征、材质、颜色、尺寸、参考图描述"
+      },
+      "requirement": {
+        "type": "string",
+        "description": "生成要求：白底/场景/模特上身，输出尺寸与用途"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "image_prompt",
+      "negative_prompt",
+      "quality_check",
+      "note"
+    ],
+    "properties": {
+      "image_prompt": {
+        "type": "string",
+        "description": "可直接投喂图像模型的正向提示词"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "description": "需排除的元素"
+      },
+      "quality_check": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "产出后需要检查的项（保真度、光影、比例等）"
+      },
+      "note": {
+        "type": "string",
+        "description": "本资产只产出指令，实际出图需用户在图像工具中执行"
+      }
+    },
+    "x-rendered-from": "capability:visual_generate"
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ],
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "flow": "hero-image-ab-flow",
+  "steps": [
+    {
+      "step": 1,
+      "skill": "（内置）A/B 方案设计（单变量校验）",
+      "status": "ok"
+    },
+    {
+      "step": 2,
+      "skill": "copy-layout",
+      "version": "A 场景卖点版",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\step2_版式栅格\\版本1\\版式栅格示意图.png"
+    },
+    {
+      "step": 3,
+      "skill": "platform-compliance-precheck",
+      "version": "A 场景卖点版",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\step3_文案合规\\版本1\\precheck.json"
+    },
+    {
+      "step": 2,
+      "skill": "copy-layout",
+      "version": "B 参数价格版",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\step2_版式栅格\\版本2\\版式栅格示意图.png"
+    },
+    {
+      "step": 3,
+      "skill": "platform-compliance-precheck",
+      "version": "B 参数价格版",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\step3_文案合规\\版本2\\precheck.json"
+    },
+    {
+      "step": 4,
+      "skill": "（内置）CTR 基准 + z 检验",
+      "status": "ok"
+    },
+    {
+      "step": 5,
+      "skill": "（人工）定稿上线",
+      "status": "pending"
+    }
+  ],
+  "summary": {
+    "商品": "便携电热水杯（316L 内胆）",
+    "平台": "抖音",
+    "版本数": 2,
+    "版式可上线": "2/2",
+    "合规可上线": "2/2",
+    "样本门槛": "单组 ≥1000 曝光 且 ≥3 天",
+    "版本比较": "差异显著，B 参数价格版 胜出",
+    "人工确认点": "上线下架由人工决定；CTR>5% 核查退款率防图文不符；老链接换图有掉权重风险",
+    "说明": "CTR/z 值由脚本实测；版式与合规结论以两个上游脚本输出为准"
+  },
+  "files": [
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\主图AB测试报告.xlsx",
+    "out\\主图AB测试报告.md",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\step2_版式栅格\\版本1\\版式栅格示意图.png",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\hero-image-ab-flow\\out\\step2_版式栅格\\版本2\\版式栅格示意图.png"
+  ],
+  "generated_at": "2026-09-30 20:56:54"
+}

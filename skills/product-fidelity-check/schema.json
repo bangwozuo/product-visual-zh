@@ -1,0 +1,125 @@
+{
+  "skill_id": "de_ecom_01_sk03",
+  "name": "产品保真校验",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": ["reference_image", "target_image"],
+    "properties": {
+      "reference_image": {
+        "type": "string",
+        "description": "基准图路径（实物原图 / 标准图）；不得使用上一版 AI 生成图"
+      },
+      "target_image": {
+        "type": "string",
+        "description": "待校验图路径（AI 生成图或修图成品）"
+      },
+      "product": {
+        "type": "string",
+        "description": "商品名 / SKU，用于报告抬头"
+      },
+      "reference_note": {
+        "type": "string",
+        "description": "基准图说明（尺寸、导出方式、主色 RGB、关键结构点）"
+      },
+      "target_note": {
+        "type": "string",
+        "description": "待校验图已知差异说明，用于人工核对"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": ["verdict", "metrics", "color", "hotspots", "fail", "warn"],
+    "properties": {
+      "verdict": {
+        "type": "string",
+        "enum": ["✅ 通过", "🟡 有条件通过", "🔴 需返工"],
+        "description": "整体判定；任一指标 🔴 即需返工"
+      },
+      "metrics": {
+        "type": "array",
+        "description": "五项像素指标：指标 / 实测值 / 单位 / 度量口径 / 判定",
+        "items": {
+          "type": "object",
+          "properties": {
+            "指标": {"type": "string"},
+            "实测值": {"type": "number"},
+            "单位": {"type": "string"},
+            "判定": {"type": "string", "enum": ["✅ 合格", "🟡 警告", "🔴 不合格"]},
+            "度量口径": {"type": "string"}
+          }
+        }
+      },
+      "color": {
+        "type": "array",
+        "description": "主色配对明细（CIEDE2000 ΔE00）",
+        "items": {
+          "type": "object",
+          "properties": {
+            "基准主色": {"type": "string"},
+            "基准占比%": {"type": "number"},
+            "生成图最近主色": {"type": "string"},
+            "生成占比%": {"type": "number"},
+            "ΔE00": {"type": "number"}
+          }
+        }
+      },
+      "hotspots": {
+        "type": "array",
+        "description": "结构差异热点，按平均色差降序，用于返工定位",
+        "items": {
+          "type": "object",
+          "properties": {
+            "区块": {"type": "string"},
+            "块中心": {"type": "string"},
+            "块内前景像素": {"type": "integer"},
+            "平均色差(0-441)": {"type": "number"}
+          }
+        }
+      },
+      "fail": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "不合格指标名清单"
+      },
+      "warn": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "警告指标名清单"
+      },
+      "need_review": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "无法自动判定的语义级项（Logo 字形 / 纹理 / 工艺 / 材质）"
+      }
+    },
+    "x-rendered-from": "capability:verify"
+  },
+  "scripts": {
+    "fidelity_check": "scripts/fidelity_check.py",
+    "usage": "python3 scripts/fidelity_check.py --input examples/input.json --outdir out",
+    "demo": "python3 scripts/fidelity_check.py --demo",
+    "deps": ["Pillow", "numpy", "openpyxl", "matplotlib"]
+  },
+  "artifacts": [
+    "out/保真校验对比图.png",
+    "out/保真校验报告.xlsx",
+    "out/保真校验报告.md",
+    "out/fidelity.json"
+  ],
+  "thresholds": {
+    "长宽比偏差%": {"合格": "<=1.0", "警告": "<=3.0", "不合格": ">3.0"},
+    "主色ΔE00": {"合格": "<3.0", "警告": "<6.0", "不合格": ">=6.0"},
+    "边缘扩散宽度px": {"合格": ">=0.5", "警告": ">=0.2", "不合格": "<0.2"},
+    "结构差异块占比%": {"合格": "<=2.0", "警告": "<=8.0", "不合格": ">8.0"},
+    "主体面积变化%": {"合格": "<=1.0", "警告": "<=5.0", "不合格": ">5.0"}
+  },
+  "constraints": {
+    "metric_source": "script",
+    "no_manual_compute": true,
+    "ai_label_required": true,
+    "human_review_required": true,
+    "semantic_check_required": ["Logo 字形", "纹理工艺", "材质表现", "结构拓扑"]
+  }
+}

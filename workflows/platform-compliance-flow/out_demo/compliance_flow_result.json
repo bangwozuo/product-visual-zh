@@ -1,0 +1,53 @@
+{
+  "flow": "platform-compliance-flow",
+  "steps": [
+    {
+      "step": 1,
+      "skill": "（内置）文本采集确认",
+      "status": "ok",
+      "chars": 96
+    },
+    {
+      "step": 2,
+      "skill": "platform-compliance-precheck（初检）",
+      "status": "ok",
+      "output": "out_demo\\初检\\precheck.json"
+    },
+    {
+      "step": 3,
+      "skill": "（内置）整改对照表",
+      "status": "ok",
+      "fixes": 13
+    },
+    {
+      "step": 4,
+      "skill": "platform-compliance-precheck（复检）",
+      "status": "ok",
+      "rounds": 1,
+      "output": "out_demo\\复检\\precheck.json"
+    },
+    {
+      "step": 5,
+      "skill": "（人工）对照官方规范确认",
+      "status": "pending"
+    }
+  ],
+  "summary": {
+    "平台/类目": "淘宝 / 化妆品",
+    "受检文本量": "96 字",
+    "初检": "红线 12 / 警告 1 / 提示 0（不建议上架）",
+    "整改项数": 13,
+    "复检": "红线 0 / 警告 0 / 提示 0（1 轮）",
+    "整体判定": "通过（修改后上架）",
+    "整改轮次上限": "3 轮（超限移交人工）",
+    "人工确认点": "上架前须人工对照平台官方最新规范复核；本流程不替代平台审核",
+    "说明": "命中/级别/判定以 precheck.json 为准；语境误报排除与整改话术由模型按 prompt.txt 完成"
+  },
+  "files": [
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\platform-compliance-flow\\out_demo\\合规整改流程报告.xlsx",
+    "out_demo\\合规整改流程报告.md",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\platform-compliance-flow\\out_demo\\初检\\合规预审清单.xlsx",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\platform-compliance-flow\\out_demo\\复检\\合规预审清单.xlsx"
+  ],
+  "generated_at": "2026-09-30 20:23:26"
+}

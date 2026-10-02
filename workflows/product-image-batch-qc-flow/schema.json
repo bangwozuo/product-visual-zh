@@ -1,0 +1,93 @@
+{
+  "workflow_id": "de_ecom_01_wf01",
+  "name": "商品图批量生成与质检",
+  "type": "composite",
+  "skill_refs": [
+    "de_ecom_01_sk01",
+    "de_ecom_01_sk02",
+    "de_ecom_01_sk03"
+  ],
+  "input": {
+    "type": "object",
+    "required": [
+      "product",
+      "batch_size"
+    ],
+    "properties": {
+      "product": {
+        "type": "string",
+        "description": "商品名 / SKU"
+      },
+      "batch_size": {
+        "type": "number",
+        "description": "本批图数量（决定抽样量）"
+      },
+      "scene": {
+        "type": "object",
+        "description": "场景需求：description / light_dir / color_temp_k / canvas；不提供则跳过场景步"
+      },
+      "source_image": {
+        "type": "string",
+        "description": "原图路径；不提供则脚本用内置样例跑通"
+      },
+      "reference_image": {
+        "type": "string",
+        "description": "实物基准图路径（保真校验用）；缺省以白底图为基准演示"
+      },
+      "generated_image": {
+        "type": "string",
+        "description": "成品图路径（场景合成出图后回填）"
+      },
+      "defects": {
+        "type": "object",
+        "description": "抽检清点回填：critical / major / minor"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "summary",
+      "steps"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "批量、白底/场景/保真各步结论、缺陷清点、批判定、人工确认点"
+      },
+      "steps": {
+        "type": "array",
+        "description": "各步骤状态与产物路径"
+      }
+    },
+    "artifacts": {
+      "qc_xlsx": "out/批量质检单.xlsx（抽样判定/保真指标/汇总）",
+      "qc_md": "out/批量质检单.md",
+      "whitebg_dir": "out/step1_白底归一/",
+      "scene_dir": "out/step2_场景合成/（提示词包）",
+      "fidelity_dir": "out/step3_保真校验/",
+      "result_json": "out/batch_qc_result.json"
+    }
+  },
+  "scripts": [
+    "scripts/run_flow.py"
+  ],
+  "constraints": {
+    "sampling_standard": "GB/T 2828.1 一般检验水平 II，正常检验一次抽样",
+    "defect_grades": {
+      "致命": "AQL 0，Ac=0 见一即拒（文字/价格/Logo 错误）",
+      "严重": "AQL 1.0（变形、ΔE00>3、结构缺失）",
+      "轻微": "AQL 4.0（锐化过度、轻微毛边）"
+    },
+    "fidelity_thresholds": {
+      "aspect_ratio": "≤1.0%",
+      "delta_E00": "<3.0",
+      "edge_width_px": "≥0.5",
+      "structure_diff": "≤2.0%",
+      "subject_area": "≤1.0%"
+    },
+    "fidelity_red_is_veto": true,
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}

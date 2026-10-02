@@ -1,0 +1,89 @@
+{
+  "skill_id": "de_ecom_01_sk06",
+  "name": "AI 模特换装",
+  "type": "atomic",
+  "input": {
+    "type": "object",
+    "required": [
+      "product_info",
+      "requirement"
+    ],
+    "properties": {
+      "product_info": {
+        "type": "string",
+        "description": "商品信息：品名、颜色（含十六进制参考更佳）、材质织法、版型结构词、图案类型与比例、Logo 位置与内容"
+      },
+      "requirement": {
+        "type": "string",
+        "description": "生成要求：现有素材形态（平铺图/挂拍/真人图）、目标平台与尺寸、换模特/换背景/换姿势"
+      },
+      "model_brief": {
+        "type": "string",
+        "description": "模特要求：性别、年龄段、体型、拍摄角度；不填按类目主流客群"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "route",
+      "positive_prompt",
+      "negative_prompt",
+      "params",
+      "lock_terms",
+      "qc_checklist",
+      "compliance_notes"
+    ],
+    "properties": {
+      "route": {
+        "type": "string",
+        "description": "推荐路线（A 局部重绘 / B ControlNet+IP-Adapter / C 分部位分层合成）与选择理由"
+      },
+      "positive_prompt": {
+        "type": "string",
+        "description": "可直接复制的正向提示词，含商品本体锁定词"
+      },
+      "negative_prompt": {
+        "type": "string",
+        "description": "通用基线 + 服饰类追加的负向提示词"
+      },
+      "params": {
+        "type": "object",
+        "description": "分辨率/采样器/步数/CFG/去噪强度/蒙版羽化/IP-Adapter 权重"
+      },
+      "lock_terms": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "商品本体锁定清单：属性 / 锁定词 / 风险提示"
+      },
+      "qc_checklist": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        },
+        "description": "出图后六项质检：颜色/图案/Logo/版型/手部/接缝，含合格线与不合格处置"
+      },
+      "compliance_notes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "AI 生成标识、平台尺寸适配、禁虚构买家秀等合规注意"
+      }
+    }
+  },
+  "constraints": {
+    "max_input_length": 5000,
+    "product_body_locked": true,
+    "logo_generation_forbidden": true,
+    "ai_label_required": true,
+    "human_review_required": true,
+    "forbidden_words": [
+      "最好",
+      "第一",
+      "100%"
+    ]
+  }
+}

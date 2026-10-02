@@ -1,0 +1,73 @@
+{
+  "workflow_id": "de_ecom_01_wf05",
+  "name": "详情页排版生成",
+  "type": "composite",
+  "skill_refs": [
+    "de_ecom_01_sk05",
+    "de_ecom_01_sk04"
+  ],
+  "input": {
+    "type": "object",
+    "required": [
+      "product",
+      "screens"
+    ],
+    "properties": {
+      "product": {
+        "type": "string",
+        "description": "商品名"
+      },
+      "width": {
+        "type": "number",
+        "description": "详情页宽度，默认 750"
+      },
+      "screens": {
+        "type": "array",
+        "description": "逐屏内容：type（hook/benefit/spec/trust/faq）/ title / text / height（高度预算 px）"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "summary",
+      "steps"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "屏数、总高度、合规红线数、长图校验、整体判定、人工确认点"
+      },
+      "steps": {
+        "type": "array",
+        "description": "各步骤状态与产物路径（含关键屏落位与全文合规扫描）"
+      }
+    },
+    "artifacts": {
+      "plan_xlsx": "out/详情页结构方案.xlsx（结构表/逐屏合规/关键屏版式/违规命中/汇总）",
+      "plan_md": "out/详情页结构方案.md",
+      "grid_dir": "out/step2_关键屏栅格/（首屏与卖点屏落位图）",
+      "compliance_dir": "out/step3_合规扫描/（precheck.json）",
+      "result_json": "out/detail_flow_result.json"
+    }
+  },
+  "scripts": [
+    "scripts/run_flow.py"
+  ],
+  "constraints": {
+    "screen_types": ["hook", "benefit", "spec", "trust", "faq"],
+    "height_budget_px": {
+      "hook": "750-1000",
+      "benefit": "750-950",
+      "spec": "500-700",
+      "trust": "500-700",
+      "faq": "500-900"
+    },
+    "max_total_height_px": 8000,
+    "benefits_per_screen": 1,
+    "hook_title_max_chars": 9,
+    "red_line_required": 0,
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}

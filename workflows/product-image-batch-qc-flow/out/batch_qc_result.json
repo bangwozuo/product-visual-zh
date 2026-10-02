@@ -1,0 +1,53 @@
+{
+  "flow": "product-image-batch-qc-flow",
+  "steps": [
+    {
+      "step": 1,
+      "skill": "white-bg-image-generate",
+      "status": "ok",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\product-image-batch-qc-flow\\out\\step1_白底归一\\白底主图_800x800.png"
+    },
+    {
+      "step": 2,
+      "skill": "scene-image-compose",
+      "status": "ok",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\product-image-batch-qc-flow\\out\\step2_场景合成\\场景合成提示词包.md"
+    },
+    {
+      "step": 3,
+      "skill": "product-fidelity-check",
+      "status": "ok",
+      "verdict": "✅ 通过",
+      "output": "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\product-image-batch-qc-flow\\out\\step3_保真校验\\fidelity.json"
+    },
+    {
+      "step": 4,
+      "skill": "（内置）GB/T 2828.1 抽样判定",
+      "status": "ok",
+      "verdict": "✅ 接收"
+    },
+    {
+      "step": 5,
+      "skill": "（人工）语义级确认与交付",
+      "status": "pending"
+    }
+  ],
+  "summary": {
+    "商品": "便携手冲咖啡壶套装（SKU: COFFEE-320ML）",
+    "批量": "500 张（样本计划见抽样表）",
+    "白底归一": "五项质检全过",
+    "场景合成": "ok",
+    "保真校验": "✅ 通过",
+    "缺陷清点": "致命 0 / 严重 1 / 轻微 4",
+    "批判定": "✅ 接收",
+    "人工确认点": "语义级保真（Logo/纹理/工艺）逐项过目；拒收批全检返工后重新抽样",
+    "说明": "六维指标/Ac/Re 均脚本实测；致命缺陷 Ac=0 见一即拒；口径 GB/T 2828.1 水平 II"
+  },
+  "files": [
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\product-image-batch-qc-flow\\out\\批量质检单.xlsx",
+    "out\\批量质检单.md",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\product-image-batch-qc-flow\\out\\step1_白底归一\\白底主图_800x800.png",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\product-image-batch-qc-flow\\out\\step2_场景合成\\场景合成提示词包.md"
+  ],
+  "generated_at": "2026-09-30 20:57:04"
+}

@@ -1,0 +1,31 @@
+{
+  "canvas": "900x1200",
+  "bg_color": "#F5F1E8",
+  "product_zone": {
+    "x": 90,
+    "y": 430,
+    "w": 720,
+    "h": 620
+  },
+  "blocks": [
+    {
+      "level": "title",
+      "text": "316L 内胆 · 限时 99 元",
+      "x": 56,
+      "y": 56,
+      "w": 700,
+      "size": 56,
+      "color": "#2B2B2B",
+      "bold": true
+    },
+    {
+      "level": "subtitle",
+      "text": "6 小时保温 60 度以上（实验室实测）",
+      "x": 56,
+      "y": 150,
+      "w": 700,
+      "size": 34,
+      "color": "#4A4A4A"
+    }
+  ]
+}

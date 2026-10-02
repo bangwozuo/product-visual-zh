@@ -1,0 +1,69 @@
+{
+  "workflow_id": "de_ecom_01_wf04",
+  "name": "多平台规格一键适配",
+  "type": "composite",
+  "skill_refs": [
+    "de_ecom_01_sk01"
+  ],
+  "input": {
+    "type": "object",
+    "required": [
+      "product"
+    ],
+    "properties": {
+      "product": {
+        "type": "string",
+        "description": "商品名"
+      },
+      "platforms": {
+        "type": "array",
+        "description": "目标平台列表（淘宝/天猫/拼多多/抖音/小红书），默认全平台"
+      },
+      "source_image": {
+        "type": "string",
+        "description": "主素材原图路径；不提供则脚本用内置样例图跑通流程"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "summary",
+      "steps"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "白底主图规格、适配平台数、自定平台数、人工确认点"
+      },
+      "steps": {
+        "type": "array",
+        "description": "各步骤状态与产物路径"
+      }
+    },
+    "artifacts": {
+      "spec_xlsx": "out/平台适配规格表.xlsx（规格表/上传检查项/汇总）",
+      "report_md": "out/平台适配规格报告.md",
+      "schematic_png": "out/各平台画布适配示意图.png",
+      "whitebg_dir": "out/step1_白底归一/（白底主图 + 五项质检）",
+      "result_json": "out/spec_flow_result.json"
+    }
+  },
+  "scripts": [
+    "scripts/run_flow.py"
+  ],
+  "constraints": {
+    "baseline": {
+      "淘宝": "800x800（≥800 支持放大镜，除 Logo 外禁文字）",
+      "天猫": "800x800（同淘宝）",
+      "拼多多": "750x750（白底，商品占比 ≥80%）",
+      "抖音": "900x1200 3:4（文字 ≤20%）",
+      "小红书": "1080x1440 3:4（安全边距 8%）"
+    },
+    "fit_mode": "contain 等比；商品本体零裁切",
+    "stretch_forbidden": true,
+    "product_area_min": "50%（1:1 白底图 ≥80%）",
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}

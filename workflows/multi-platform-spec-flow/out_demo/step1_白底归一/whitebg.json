@@ -1,0 +1,63 @@
+{
+  "checks": [
+    {
+      "指标": "背景纯白率",
+      "实测值": "100.0%",
+      "判定": "✅ 合格",
+      "口径": "成品四边框像素全部为 RGB(255,255,255)"
+    },
+    {
+      "指标": "商品占比",
+      "实测值": "长边 91.5%（面积 30.4%）",
+      "判定": "✅ 合格",
+      "口径": "外接矩形长短边比 0.36，非方形按长边/画布短边≥90%判"
+    },
+    {
+      "指标": "居中偏差",
+      "实测值": "0.00%",
+      "判定": "✅ 合格",
+      "口径": "外接矩形中心与画布中心偏差 / 画布短边，≤2%"
+    },
+    {
+      "指标": "毛边/过渡带",
+      "实测值": "0.99px",
+      "判定": "✅ 合格",
+      "口径": "主体边界向外至纯白的非纯白过渡带平均厚度；≤1.2px（1px 抗锯齿为佳），>2.0px 为可见灰边"
+    },
+    {
+      "指标": "投影/倒影残留",
+      "实测值": "10595 px（已清除）",
+      "判定": "✅ 合格",
+      "口径": "亮度≥165 且饱和度≤40 的贴边软区并入背景；白底图不带投影"
+    }
+  ],
+  "verdict": "✅ 通过",
+  "failed": [],
+  "warned": [],
+  "src_size": [
+    900,
+    900
+  ],
+  "canvas": [
+    800,
+    800
+  ],
+  "bbox": [
+    267,
+    34,
+    533,
+    766
+  ],
+  "bbox_ar": 0.365,
+  "area_pct": 30.42,
+  "long_pct": 91.5,
+  "off_pct": 0.0,
+  "halo_pct": 0.992,
+  "shadow_px": 10595,
+  "files": [
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out_demo\\step1_白底归一\\白底主图_800x800.png",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out_demo\\step1_白底归一\\白底化质检报告.xlsx",
+    "C:\\Users\\nsxzy\\WorkBuddy\\2026-09-24-12-12-44\\library\\repos\\product-visual-zh\\workflows\\multi-platform-spec-flow\\out_demo\\step1_白底归一\\白底化报告.md"
+  ],
+  "generated_at": "2026-09-30 20:29:58"
+}

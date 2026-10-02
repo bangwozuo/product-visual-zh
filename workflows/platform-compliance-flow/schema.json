@@ -1,0 +1,67 @@
+{
+  "workflow_id": "de_ecom_01_wf03",
+  "name": "平台合规预审流程",
+  "type": "composite",
+  "skill_refs": [
+    "de_ecom_01_sk04"
+  ],
+  "input": {
+    "type": "object",
+    "required": [
+      "text",
+      "platform"
+    ],
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "受检文本（标题+详情+图上文字 OCR，注明来源）"
+      },
+      "platform": {
+        "type": "string",
+        "description": "淘宝/天猫/抖音/小红书/拼多多"
+      },
+      "category": {
+        "type": "string",
+        "description": "化妆品/食品/保健品/医疗器械/母婴/教育/金融；不填只扫通用词表"
+      },
+      "revised_text": {
+        "type": "string",
+        "description": "整改后文案；不提供则流程停在整改清单交付"
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "summary",
+      "steps"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object",
+        "description": "初检/复检三级计数、整改项数、轮次、整体判定、人工确认点"
+      },
+      "steps": {
+        "type": "array",
+        "description": "各步骤执行状态与产物路径（含复检轮次）"
+      }
+    },
+    "artifacts": {
+      "report_xlsx": "out/合规整改流程报告.xlsx（初检清单/整改对照/复检清单/汇总，红线行标红）",
+      "first_xlsx": "out/初检/合规预审清单.xlsx",
+      "final_xlsx": "out/复检/合规预审清单.xlsx",
+      "result_json": "out/compliance_flow_result.json"
+    }
+  },
+  "scripts": [
+    "scripts/run_flow.py"
+  ],
+  "constraints": {
+    "final_red_line": 0,
+    "max_revise_rounds": 3,
+    "warn_limit_with_note": 2,
+    "coverage": "标题/详情/图上文字 100% 采集，漏检位置须标注",
+    "ai_label_required": true,
+    "human_review_required": true
+  }
+}
