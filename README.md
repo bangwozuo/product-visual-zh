@@ -2,10 +2,44 @@
 
 > **一人店的"到岗美工"，只出能直接上架的合规商品图**
 
+![演示](docs/demo.mp4)
+
+*上方演示串接了本仓 5 个代表资产的真实执行截图：白底图生成 → 产品保真校验 → 文案排版 → 主图 A/B 版本生成 → 商品图批量生成与质检（每张均为脚本实跑产物，单资产完整截图见各资产 README）。*
+
 [![Stage](https://img.shields.io/badge/stage-P0-orange)](https://github.com/bangwozuo)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
 [![NoKey](https://img.shields.io/badge/API%20Key-not%20required-success)](#资产形态)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+
+---
+
+## 数字员工总览
+
+| 项 | 内容 |
+|------|------|
+| 身份 | **商品视觉师**——一人店的"到岗美工"，只出能直接上架的合规商品图 |
+| 边界 | 做：商品图生成、质检、合规预审、多平台适配；不做：品牌 VI、仿冒与虚假功效图 |
+| 硬卡点 | 每张 AI 生成图上架前过 `product-fidelity-check`（保真）+ `platform-compliance-precheck`（合规）双卡点 |
+| KPI | 一次过审率 ≥90%；单张交付 ≤5 分钟；返工率 ≤10% |
+| 目标用户 | 月上新 5-50 款的四平台一人店/夫妻店（电商小卖家） |
+
+---
+
+## 资产矩阵（11 个资产）
+
+| 资产 | 一句话 | 类型 | README |
+|------|--------|------|--------|
+| 白底图生成 | 带背景图 → 平台过审的纯白底主图 + 五项量化的质检 | 技能 | [README](skills/white-bg-image-generate/README.md) |
+| 场景图合成 | 白底图融进真实场景——光影/透视双一致的合成提示词包 | 技能 | [README](skills/scene-image-compose/README.md) |
+| 产品保真校验 | 实物图 vs 生成图六维量化比对，出返工指令单 | 技能 | [README](skills/product-fidelity-check/README.md) |
+| 平台合规预审 | 极限词/牛皮癣检测，24 条词表扫描出 Excel 预审清单 | 技能 | [README](skills/platform-compliance-precheck/README.md) |
+| 文案排版 | 卖点上图：8px 栅格 + 三级字号 + 对比度实测 | 技能 | [README](skills/copy-layout/README.md) |
+| AI 模特换装 | 平铺图 → 可投喂图像模型的换装提示词包（换装不换商品） | 技能 | [README](skills/ai-model-swap/README.md) |
+| 商品图批量生成与质检 | 生成→场景化→保真→GB/T 2828.1 抽样判定全链路 | 工作流 | [README](workflows/product-image-batch-qc-flow/README.md) |
+| 主图 A/B 版本生成 | 两版主图落位 + 合规 + z 检验出统计结论 | 工作流 | [README](workflows/hero-image-ab-flow/README.md) |
+| 平台合规预审流程 | 采集→扫描→整改→复检闭环，红线归零才放行 | 工作流 | [README](workflows/platform-compliance-flow/README.md) |
+| 多平台规格一键适配 | 一套主素材 → 四平台可直接上传的规格包 | 工作流 | [README](workflows/multi-platform-spec-flow/README.md) |
+| 详情页排版生成 | 卖点 → 五屏说服路径 + 落位 + 合规 + 长图校验 | 工作流 | [README](workflows/detail-page-layout-flow/README.md) |
 
 ---
 
@@ -25,14 +59,14 @@
 
 ## 资产形态
 
-**纯提示词资产** —— 这是理解本仓库的关键：
+**提示词资产 + 离线质检脚本** —— 这是理解本仓库的关键：
 
 | 特性 | 说明 |
 |------|------|
 | ✅ 无需 API Key | 一个 Key 都不需要 |
-| ✅ 无需部署 | 没有服务端，没有脚本 |
-| ✅ 无需依赖 | 克隆后用文本编辑器就能看 |
-| ✅ 平台无关 | 粘贴到任何 AI 工具即可使用 |
+| ✅ 无需部署 | 没有服务端；质检脚本（保真/白底/排版/工作流）可离线复跑 |
+| ✅ 平台无关 | 提示词粘贴到任何 AI 工具即可使用 |
+| ✅ 真实可验证 | 量化指标全部来自脚本实测，README 截图为真实执行产物 |
 | ✅ 用户自备算力 | 模型来自你自己的订阅 |
 
 ---
