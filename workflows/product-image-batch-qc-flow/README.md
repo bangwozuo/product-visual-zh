@@ -8,6 +8,8 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
+![演示视频](docs/assets/demo.mp4)
+
 *上图来自真实执行：`python scripts/run_flow.py --demo`，便携手冲咖啡壶套装批量 500 张——白底归一五项质检全过、保真校验通过、抽样 n=50 判定三级缺陷全接收 → 批判定 ✅ 接收。*
 
 ---

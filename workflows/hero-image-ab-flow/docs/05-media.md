@@ -1,5 +1,34 @@
 # 截图与录屏
 
+> 以下素材均来自**真实执行**：`--run` 实拍终端 / 实跑产物文件，无摆拍。
+
+## 演示视频
+
+![演示视频](assets/demo.mp4)
+
+*第二帧为实跑结果数据*
+
+## 执行截图
+
+![真实执行](assets/run-terminal.png)
+
+## 实跑产物
+
+| 文件 | 说明 |
+|---|---|
+| [`out/_layout_in_1.json`](out/_layout_in_1.json) | 结构化结果（实跑生成） · 1 KB |
+| [`out/_layout_in_2.json`](out/_layout_in_2.json) | 结构化结果（实跑生成） · 1 KB |
+| [`out/_precheck_in_1.json`](out/_precheck_in_1.json) | 结构化结果（实跑生成） · 0 KB |
+| [`out/_precheck_in_2.json`](out/_precheck_in_2.json) | 结构化结果（实跑生成） · 0 KB |
+| [`out/ab_flow_result.json`](out/ab_flow_result.json) | 结构化结果（实跑生成） · 3 KB |
+| [`out/主图AB测试报告.md`](out/主图AB测试报告.md) | Markdown 报告（实跑生成） · 1 KB |
+| [`out/主图AB测试报告.xlsx`](out/主图AB测试报告.xlsx) | Excel 工作簿（实跑生成） · 8 KB |
+
+
+---
+
+## 附录：实跑输出明细
+
 > 本资产为纯提示词客户端资产，无界面可截图。以下为**实跑运行效果**。
 
 ## 运行效果

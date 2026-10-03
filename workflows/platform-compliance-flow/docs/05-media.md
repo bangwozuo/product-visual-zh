@@ -1,5 +1,32 @@
 # 截图与录屏
 
+> 以下素材均来自**真实执行**：`--run` 实拍终端 / 实跑产物文件，无摆拍。
+
+## 演示视频
+
+![演示视频](assets/demo.mp4)
+
+*第二帧为实跑结果数据*
+
+## 执行截图
+
+![真实执行](assets/run-terminal.png)
+
+## 实跑产物
+
+| 文件 | 说明 |
+|---|---|
+| [`out/_precheck_in_初检.json`](out/_precheck_in_初检.json) | 结构化结果（实跑生成） · 0 KB |
+| [`out/_precheck_in_复检.json`](out/_precheck_in_复检.json) | 结构化结果（实跑生成） · 0 KB |
+| [`out/compliance_flow_result.json`](out/compliance_flow_result.json) | 结构化结果（实跑生成） · 2 KB |
+| [`out/合规整改流程报告.md`](out/合规整改流程报告.md) | Markdown 报告（实跑生成） · 3 KB |
+| [`out/合规整改流程报告.xlsx`](out/合规整改流程报告.xlsx) | Excel 工作簿（实跑生成） · 10 KB |
+
+
+---
+
+## 附录：实跑输出明细
+
 > 本资产为纯提示词客户端资产，无界面可截图。以下为**实跑运行效果**。
 
 ## 运行效果

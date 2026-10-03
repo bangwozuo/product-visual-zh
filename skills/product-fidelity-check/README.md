@@ -8,6 +8,8 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
+![演示视频](docs/assets/demo.mp4)
+
 *上图来自真实执行：`python scripts/fidelity_check.py --demo`，800×800 实物基准图 vs 800×760 生成图（1× 直出、Logo 被 AI 画成绿色），判定 🔴 需返工，对比图 + 报告落盘。*
 
 ---

@@ -9,6 +9,8 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
+![演示视频](docs/assets/demo.mp4)
+
 *上图来自真实执行：`python scripts/run_flow.py --demo`，便携电热水杯——白底归一质检通过后，一键产出淘宝/拼多多/抖音/小红书四平台规格表（缩放比 1.000/0.938/1.125/1.350）+ 适配示意图 + 逐平台上传检查项。*
 
 ---

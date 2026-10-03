@@ -8,6 +8,8 @@
 
 ![输出预览 · 实跑产物](docs/assets/run-terminal.png)
 
+![演示视频](docs/assets/demo.mp4)
+
 *上图来自实跑产物：本资产为纯提示词技能（无脚本），展示 `examples/output.md`——不锈钢摩卡壶「厨房晨光」场景的完整合成提示词包。*
 
 ---

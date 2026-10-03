@@ -9,6 +9,8 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
+![演示视频](docs/assets/demo.mp4)
+
 *上图来自真实执行：`python scripts/run_flow.py --demo`，淘宝/化妆品 96 字文案——初检红线 12 / 警告 1，整改 13 项后复检 1 轮归零，整体判定「通过（修改后上架）」。*
 
 ---

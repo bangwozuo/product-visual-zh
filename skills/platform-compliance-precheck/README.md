@@ -7,6 +7,8 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
+![演示视频](docs/assets/demo.mp4)
+
 *上图来自真实执行：96 字待检文案命中 13 项（红线 12 / 警告 1），判定「不建议上架」，产物落盘 Excel + JSON。*
 
 ---
