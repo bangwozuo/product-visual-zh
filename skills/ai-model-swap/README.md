@@ -9,7 +9,7 @@
 
 ![输出预览 · 实跑产物](docs/assets/run-terminal.png)
 
-![演示视频](docs/assets/demo.mp4)
+🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
 
 *上图来自实跑产物：本资产为纯提示词技能（无脚本），展示 `examples/output.md`——法式碎花连衣裙（抖音 3:4）的完整换装提示词包，走路线 B（ControlNet OpenPose + IP-Adapter 0.8）。*
 

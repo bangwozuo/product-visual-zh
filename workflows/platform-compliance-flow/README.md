@@ -9,7 +9,7 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
-![演示视频](docs/assets/demo.mp4)
+🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕检测叙事：业务钩子 → 真实执行 → 检查项逐条亮灯 → 交付物
 
 *上图来自真实执行：`python scripts/run_flow.py --demo`，淘宝/化妆品 96 字文案——初检红线 12 / 警告 1，整改 13 项后复检 1 轮归零，整体判定「通过（修改后上架）」。*
 

@@ -9,7 +9,7 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
-![演示视频](docs/assets/demo.mp4)
+🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
 
 *上图来自真实执行：`python scripts/run_flow.py --demo`，便携手冲咖啡壶套装（750px 宽）——6 屏结构总高 4850px / 上限 8000px，合规红线 0，第 1/2 屏落位检查通过 → 判定 ✅ 可交付。*
 
