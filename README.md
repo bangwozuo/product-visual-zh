@@ -2,14 +2,36 @@
 
 > **一人店的"到岗美工"，只出能直接上架的合规商品图**
 
-![演示](docs/demo.mp4)
+![商品视觉师 · 合规预审动态演示](docs/assets/hero.gif)
 
-*上方演示串接了本仓 5 个代表资产的真实执行截图：白底图生成 → 产品保真校验 → 文案排版 → 主图 A/B 版本生成 → 商品图批量生成与质检（每张均为脚本实跑产物，单资产完整截图见各资产 README）。*
+*▲ 平台合规预审实跑录像：96 字文案 → 13 项违禁词逐条定位 → 直接可用的改法。每个资产都有这样的完整演示视频（见各资产 `docs/assets/demo.mp4`，合集见 [docs/demo.mp4](docs/demo.mp4)）。*
 
-[![Stage](https://img.shields.io/badge/stage-P0-orange)](https://github.com/bangwozuo)
+[![Stage](https://img.shields.io/badge/stage-P0-orange)](#资产形态)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
 [![NoKey](https://img.shields.io/badge/API%20Key-not%20required-success)](#资产形态)
+[![Tests](https://img.shields.io/badge/tests-134%2F134%20pass-brightgreen)](#资产形态)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+
+## 30 秒上手
+
+| 你在用什么 | 怎么装 |
+|---|---|
+| **WorkBuddy** | 资料库搜索「商品视觉师」→ 一键添加为数字员工 |
+| **Coze / Dify** | 复制各技能 `SKILL.md` 正文到智能体 system prompt（纯提示词，无 API Key） |
+| **手动 / CLI** | `git clone https://github.com/bangwozuo/product-visual-zh` → 各技能带 `scripts/*.py` 可直接跑 `--demo` |
+
+## 和直接问 AI 有什么区别
+
+| | 直接问 ChatGPT/豆包 | 本资产包 |
+|---|---|---|
+| 合规检查 | 靠模型自由发挥，漏检不负责 | 24 条规则表逐条扫描，输出可审计的 Excel 清单 |
+| 图片质量 | 无量化标准 | 保真六维比对 + GB/T 2828.1 抽样判定 |
+| 上架规格 | 每个平台重新问 | 四平台规格一次适配 |
+| 结果责任 | 对话结束即忘 | 每次产出落盘（JSON/Excel/图片），可追溯 |
+
+## 不做什么（Non-goals）
+
+不做品牌 VI 设计 · 不做仿冒/虚假功效图 · 不接平台私有 API · 不做通用美工（只做电商商品图这一件事）。
 
 ---
 
