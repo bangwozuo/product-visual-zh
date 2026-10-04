@@ -9,7 +9,7 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
-🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
+🎬 **[▶ 观看演示视频（在线播放）](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/workflows/hero-image-ab-flow/docs/assets/demo.mp4) · [GitHub 页](https://github.com/bangwozuo/product-visual-zh/blob/main/workflows/hero-image-ab-flow/docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
 
 *上图来自真实执行：`python scripts/run_flow.py --demo`，便携电热水杯抖音主图 A/B——A 场景卖点版 CTR 3.00% vs B 参数价格版 4.23%，z=2.61（p=0.0091），判定 B 显著胜出（+41.0%）。*
 

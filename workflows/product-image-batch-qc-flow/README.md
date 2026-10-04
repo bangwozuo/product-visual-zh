@@ -8,7 +8,7 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
-🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕检测叙事：业务钩子 → 真实执行 → 检查项逐条亮灯 → 交付物
+🎬 **[▶ 观看演示视频（在线播放）](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/workflows/product-image-batch-qc-flow/docs/assets/demo.mp4) · [GitHub 页](https://github.com/bangwozuo/product-visual-zh/blob/main/workflows/product-image-batch-qc-flow/docs/assets/demo.mp4)** — 四幕检测叙事：业务钩子 → 真实执行 → 检查项逐条亮灯 → 交付物
 
 *上图来自真实执行：`python scripts/run_flow.py --demo`，便携手冲咖啡壶套装批量 500 张——白底归一五项质检全过、保真校验通过、抽样 n=50 判定三级缺陷全接收 → 批判定 ✅ 接收。*
 

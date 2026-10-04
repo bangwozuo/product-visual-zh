@@ -8,7 +8,7 @@
 
 ![输出预览 · 实跑产物](docs/assets/run-terminal.png)
 
-🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
+🎬 **[▶ 观看演示视频（在线播放）](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/skills/scene-image-compose/docs/assets/demo.mp4) · [GitHub 页](https://github.com/bangwozuo/product-visual-zh/blob/main/skills/scene-image-compose/docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
 
 *上图来自实跑产物：本资产为纯提示词技能（无脚本），展示 `examples/output.md`——不锈钢摩卡壶「厨房晨光」场景的完整合成提示词包。*
 

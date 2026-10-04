@@ -8,7 +8,7 @@
 
 ![真实执行](docs/assets/run-terminal.png)
 
-🎬 **[▶ 观看演示视频](docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
+🎬 **[▶ 观看演示视频（在线播放）](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/skills/white-bg-image-generate/docs/assets/demo.mp4) · [GitHub 页](https://github.com/bangwozuo/product-visual-zh/blob/main/skills/white-bg-image-generate/docs/assets/demo.mp4)** — 四幕创作叙事：业务钩子 → 真实执行 → 要点到成稿演变 → 交付物
 
 *上图来自真实执行：`python scripts/white_bg.py --demo`，900×900 带米灰背景与投影的源图 → 800×800 纯白底主图，五项质检全部通过，成品 PNG + 报告落盘。*
 

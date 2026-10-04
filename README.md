@@ -2,9 +2,9 @@
 
 > **一人店的"到岗美工"，只出能直接上架的合规商品图**
 
-![商品视觉师 · 合规预审动态演示](docs/assets/hero.gif)
+![商品视觉师 · 合规预审动态演示](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/docs/assets/hero.gif)
 
-*▲ 平台合规预审实跑录像：96 字文案 → 13 项违禁词逐条定位 → 直接可用的改法。每个资产都有这样的完整演示视频（见各资产 `docs/assets/demo.mp4`，合集见 [docs/demo.mp4](docs/demo.mp4)）。*
+*▲ 平台合规预审实跑录像：96 字文案 → 13 项违禁词逐条定位 → 直接可用的改法。每个资产都有这样的完整演示视频（见各资产 `docs/assets/demo.mp4`，合集见 [docs/demo.mp4](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/docs/demo.mp4)）。*
 
 [![Stage](https://img.shields.io/badge/stage-P0-orange)](#资产形态)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
