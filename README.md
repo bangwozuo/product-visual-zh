@@ -144,24 +144,24 @@ product-visual-zh/
 
 ## 技能清单（6 个）
 
-| # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
-|---|------|--------|--------|--------|------|
-| 1 | 白底图生成 | 图像生成与处理 | `S` | [prompt.txt](skills/white-bg-image-generate/prompt.txt) | [docs](skills/white-bg-image-generate/docs/) |
-| 2 | 场景图合成 | 图像生成与处理 | `M` | [prompt.txt](skills/scene-image-compose/prompt.txt) | [docs](skills/scene-image-compose/docs/) |
-| 3 | 产品保真校验 | 一致性与保真校验 | `M` | [prompt.txt](skills/product-fidelity-check/prompt.txt) | [docs](skills/product-fidelity-check/docs/) |
-| 4 | 平台合规预审 | 合规校验 | `S` | [prompt.txt](skills/platform-compliance-precheck/prompt.txt) | [docs](skills/platform-compliance-precheck/docs/) |
-| 5 | 文案排版 | 图像生成与处理 | `S` | [prompt.txt](skills/copy-layout/prompt.txt) | [docs](skills/copy-layout/docs/) |
-| 6 | AI 模特换装 | 图像生成与处理 | `L` | [prompt.txt](skills/ai-model-swap/prompt.txt) | [docs](skills/ai-model-swap/docs/) |
+| # | 技能 | 能力族 | 复杂度 | 说明文档 |
+|---|------|--------|--------|----------|
+| 1 | 白底图生成 | 图像生成与处理 | `S` | [README](skills/white-bg-image-generate/README.md) |
+| 2 | 场景图合成 | 图像生成与处理 | `M` | [README](skills/scene-image-compose/README.md) |
+| 3 | 产品保真校验 | 一致性与保真校验 | `M` | [README](skills/product-fidelity-check/README.md) |
+| 4 | 平台合规预审 | 合规校验 | `S` | [README](skills/platform-compliance-precheck/README.md) |
+| 5 | 文案排版 | 图像生成与处理 | `S` | [README](skills/copy-layout/README.md) |
+| 6 | AI 模特换装 | 图像生成与处理 | `L` | [README](skills/ai-model-swap/README.md) |
 
 ## 工作流清单（5 条）
 
-| # | 工作流 | 阶段 | 复杂度 | 触发 | 定义 | 文档 |
-|---|--------|------|--------|------|------|------|
-| 1 | 商品图批量生成与质检 | `P0` | `M` | 人工 | [SKILL.md](workflows/product-image-batch-qc-flow/SKILL.md) | [docs](workflows/product-image-batch-qc-flow/docs/) |
-| 2 | 主图 A/B 版本生成 | `P0` | `S` | 人工 | [SKILL.md](workflows/hero-image-ab-flow/SKILL.md) | [docs](workflows/hero-image-ab-flow/docs/) |
-| 3 | 平台合规预审 | `P0` | `S` | 事件（出图完成） | [SKILL.md](workflows/platform-compliance-flow/SKILL.md) | [docs](workflows/platform-compliance-flow/docs/) |
-| 4 | 多平台规格一键适配 | `P1` | `M` | 事件（新品上架） | [SKILL.md](workflows/multi-platform-spec-flow/SKILL.md) | [docs](workflows/multi-platform-spec-flow/docs/) |
-| 5 | 详情页排版生成 | `P1` | `M` | 人工 | [SKILL.md](workflows/detail-page-layout-flow/SKILL.md) | [docs](workflows/detail-page-layout-flow/docs/) |
+| # | 工作流 | 阶段 | 复杂度 | 触发 | 说明文档 |
+|---|--------|------|--------|------|----------|
+| 1 | 商品图批量生成与质检 | `P0` | `M` | 人工 | [README](workflows/product-image-batch-qc-flow/README.md) |
+| 2 | 主图 A/B 版本生成 | `P0` | `S` | 人工 | [README](workflows/hero-image-ab-flow/README.md) |
+| 3 | 平台合规预审 | `P0` | `S` | 事件（出图完成） | [README](workflows/platform-compliance-flow/README.md) |
+| 4 | 多平台规格一键适配 | `P1` | `M` | 事件（新品上架） | [README](workflows/multi-platform-spec-flow/README.md) |
+| 5 | 详情页排版生成 | `P1` | `M` | 人工 | [README](workflows/detail-page-layout-flow/README.md) |
 
 ---
 
