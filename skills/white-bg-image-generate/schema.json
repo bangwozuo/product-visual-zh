@@ -58,6 +58,7 @@
       "100%"
     ],
     "ai_label_required": true,
-    "human_review_required": true
+    "human_review_required": true,
+    "external_api_required": false
   }
 }

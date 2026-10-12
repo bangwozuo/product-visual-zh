@@ -82,7 +82,10 @@
   "constraints": {
     "max_input_length": 5000,
     "single_light_source": true,
-    "color_temp_range_k": [3000, 6500],
+    "color_temp_range_k": [
+      3000,
+      6500
+    ],
     "lighting_ratio": "2:1 - 3:1",
     "product_area_ratio": "40%-60%",
     "logo_products_layer_composite": true,
@@ -92,6 +95,7 @@
       "最好",
       "第一",
       "100%"
-    ]
+    ],
+    "external_api_required": false
   }
 }

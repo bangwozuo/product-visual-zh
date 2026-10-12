@@ -104,3 +104,10 @@ python3 <SKILL_DIR>/scripts/grid_preview.py --demo          # 无输入也能看
 ---
 
 *本技能遵循 [bangwozuo 数字员工资产规范](https://github.com/bangwozuo/digital-employee-spec) v3.0*
+
+## 输出规格（字段清单）
+
+| 字段 | 说明 |
+|------|------|
+| `summary` | 整体判定、文字面积与上限、安全边距、五项检查结果 |
+| `blocks` | 文字块明细：字号达标/对比度实测值/边距内/压商品区 |

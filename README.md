@@ -2,9 +2,9 @@
 
 > **一人店的"到岗美工"，只出能直接上架的合规商品图**
 
-![商品视觉师 · 合规预审动态演示](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/docs/assets/hero.gif)
+![商品视觉师 · 动态演示](docs/assets/hero.gif)
 
-*▲ 平台合规预审实跑录像：96 字文案 → 13 项违禁词逐条定位 → 直接可用的改法。每个资产都有这样的完整演示视频（见各资产 `docs/assets/demo.mp4`，合集见 [docs/demo.mp4](https://cdn.jsdelivr.net/gh/bangwozuo/product-visual-zh@main/docs/demo.mp4)）。*
+*▲ 真实执行录播（自动循环播放）· [▶ 观看完整版合集视频](docs/demo.mp4)*
 
 [![Stage](https://img.shields.io/badge/stage-P0-orange)](#资产形态)
 [![Asset](https://img.shields.io/badge/asset-prompt--only-blueviolet)](#资产形态)
@@ -44,24 +44,6 @@
 | 硬卡点 | 每张 AI 生成图上架前过 `product-fidelity-check`（保真）+ `platform-compliance-precheck`（合规）双卡点 |
 | KPI | 一次过审率 ≥90%；单张交付 ≤5 分钟；返工率 ≤10% |
 | 目标用户 | 月上新 5-50 款的四平台一人店/夫妻店（电商小卖家） |
-
----
-
-## 资产矩阵（11 个资产）
-
-| 资产 | 一句话 | 类型 | README |
-|------|--------|------|--------|
-| 白底图生成 | 带背景图 → 平台过审的纯白底主图 + 五项量化的质检 | 技能 | [README](skills/white-bg-image-generate/README.md) |
-| 场景图合成 | 白底图融进真实场景——光影/透视双一致的合成提示词包 | 技能 | [README](skills/scene-image-compose/README.md) |
-| 产品保真校验 | 实物图 vs 生成图六维量化比对，出返工指令单 | 技能 | [README](skills/product-fidelity-check/README.md) |
-| 平台合规预审 | 极限词/牛皮癣检测，24 条词表扫描出 Excel 预审清单 | 技能 | [README](skills/platform-compliance-precheck/README.md) |
-| 文案排版 | 卖点上图：8px 栅格 + 三级字号 + 对比度实测 | 技能 | [README](skills/copy-layout/README.md) |
-| AI 模特换装 | 平铺图 → 可投喂图像模型的换装提示词包（换装不换商品） | 技能 | [README](skills/ai-model-swap/README.md) |
-| 商品图批量生成与质检 | 生成→场景化→保真→GB/T 2828.1 抽样判定全链路 | 工作流 | [README](workflows/product-image-batch-qc-flow/README.md) |
-| 主图 A/B 版本生成 | 两版主图落位 + 合规 + z 检验出统计结论 | 工作流 | [README](workflows/hero-image-ab-flow/README.md) |
-| 平台合规预审流程 | 采集→扫描→整改→复检闭环，红线归零才放行 | 工作流 | [README](workflows/platform-compliance-flow/README.md) |
-| 多平台规格一键适配 | 一套主素材 → 四平台可直接上传的规格包 | 工作流 | [README](workflows/multi-platform-spec-flow/README.md) |
-| 详情页排版生成 | 卖点 → 五屏说服路径 + 落位 + 合规 + 长图校验 | 工作流 | [README](workflows/detail-page-layout-flow/README.md) |
 
 ---
 
@@ -164,12 +146,12 @@ product-visual-zh/
 
 | # | 技能 | 能力族 | 复杂度 | 提示词 | 文档 |
 |---|------|--------|--------|--------|------|
-| 1 | 白底图生成 | 文案生成 | `S` | [prompt.txt](skills/white-bg-image-generate/prompt.txt) | [docs](skills/white-bg-image-generate/docs/) |
-| 2 | 场景图合成 | 文案生成 | `M` | [prompt.txt](skills/scene-image-compose/prompt.txt) | [docs](skills/scene-image-compose/docs/) |
-| 3 | 产品保真校验 | 文案生成 | `M` | [prompt.txt](skills/product-fidelity-check/prompt.txt) | [docs](skills/product-fidelity-check/docs/) |
+| 1 | 白底图生成 | 图像生成与处理 | `S` | [prompt.txt](skills/white-bg-image-generate/prompt.txt) | [docs](skills/white-bg-image-generate/docs/) |
+| 2 | 场景图合成 | 图像生成与处理 | `M` | [prompt.txt](skills/scene-image-compose/prompt.txt) | [docs](skills/scene-image-compose/docs/) |
+| 3 | 产品保真校验 | 一致性与保真校验 | `M` | [prompt.txt](skills/product-fidelity-check/prompt.txt) | [docs](skills/product-fidelity-check/docs/) |
 | 4 | 平台合规预审 | 合规校验 | `S` | [prompt.txt](skills/platform-compliance-precheck/prompt.txt) | [docs](skills/platform-compliance-precheck/docs/) |
-| 5 | 文案排版 | 上架优化 | `S` | [prompt.txt](skills/copy-layout/prompt.txt) | [docs](skills/copy-layout/docs/) |
-| 6 | AI 模特换装 | 文案生成 | `L` | [prompt.txt](skills/ai-model-swap/prompt.txt) | [docs](skills/ai-model-swap/docs/) |
+| 5 | 文案排版 | 图像生成与处理 | `S` | [prompt.txt](skills/copy-layout/prompt.txt) | [docs](skills/copy-layout/docs/) |
+| 6 | AI 模特换装 | 图像生成与处理 | `L` | [prompt.txt](skills/ai-model-swap/prompt.txt) | [docs](skills/ai-model-swap/docs/) |
 
 ## 工作流清单（5 条）
 

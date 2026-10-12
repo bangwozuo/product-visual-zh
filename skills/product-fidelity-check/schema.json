@@ -4,7 +4,10 @@
   "type": "atomic",
   "input": {
     "type": "object",
-    "required": ["reference_image", "target_image"],
+    "required": [
+      "reference_image",
+      "target_image"
+    ],
     "properties": {
       "reference_image": {
         "type": "string",
@@ -30,11 +33,22 @@
   },
   "output": {
     "type": "object",
-    "required": ["verdict", "metrics", "color", "hotspots", "fail", "warn"],
+    "required": [
+      "verdict",
+      "metrics",
+      "color",
+      "hotspots",
+      "fail",
+      "warn"
+    ],
     "properties": {
       "verdict": {
         "type": "string",
-        "enum": ["✅ 通过", "🟡 有条件通过", "🔴 需返工"],
+        "enum": [
+          "✅ 通过",
+          "🟡 有条件通过",
+          "🔴 需返工"
+        ],
         "description": "整体判定；任一指标 🔴 即需返工"
       },
       "metrics": {
@@ -43,11 +57,26 @@
         "items": {
           "type": "object",
           "properties": {
-            "指标": {"type": "string"},
-            "实测值": {"type": "number"},
-            "单位": {"type": "string"},
-            "判定": {"type": "string", "enum": ["✅ 合格", "🟡 警告", "🔴 不合格"]},
-            "度量口径": {"type": "string"}
+            "指标": {
+              "type": "string"
+            },
+            "实测值": {
+              "type": "number"
+            },
+            "单位": {
+              "type": "string"
+            },
+            "判定": {
+              "type": "string",
+              "enum": [
+                "✅ 合格",
+                "🟡 警告",
+                "🔴 不合格"
+              ]
+            },
+            "度量口径": {
+              "type": "string"
+            }
           }
         }
       },
@@ -57,11 +86,21 @@
         "items": {
           "type": "object",
           "properties": {
-            "基准主色": {"type": "string"},
-            "基准占比%": {"type": "number"},
-            "生成图最近主色": {"type": "string"},
-            "生成占比%": {"type": "number"},
-            "ΔE00": {"type": "number"}
+            "基准主色": {
+              "type": "string"
+            },
+            "基准占比%": {
+              "type": "number"
+            },
+            "生成图最近主色": {
+              "type": "string"
+            },
+            "生成占比%": {
+              "type": "number"
+            },
+            "ΔE00": {
+              "type": "number"
+            }
           }
         }
       },
@@ -71,26 +110,40 @@
         "items": {
           "type": "object",
           "properties": {
-            "区块": {"type": "string"},
-            "块中心": {"type": "string"},
-            "块内前景像素": {"type": "integer"},
-            "平均色差(0-441)": {"type": "number"}
+            "区块": {
+              "type": "string"
+            },
+            "块中心": {
+              "type": "string"
+            },
+            "块内前景像素": {
+              "type": "integer"
+            },
+            "平均色差(0-441)": {
+              "type": "number"
+            }
           }
         }
       },
       "fail": {
         "type": "array",
-        "items": {"type": "string"},
+        "items": {
+          "type": "string"
+        },
         "description": "不合格指标名清单"
       },
       "warn": {
         "type": "array",
-        "items": {"type": "string"},
+        "items": {
+          "type": "string"
+        },
         "description": "警告指标名清单"
       },
       "need_review": {
         "type": "array",
-        "items": {"type": "string"},
+        "items": {
+          "type": "string"
+        },
         "description": "无法自动判定的语义级项（Logo 字形 / 纹理 / 工艺 / 材质）"
       }
     },
@@ -100,7 +153,12 @@
     "fidelity_check": "scripts/fidelity_check.py",
     "usage": "python3 scripts/fidelity_check.py --input examples/input.json --outdir out",
     "demo": "python3 scripts/fidelity_check.py --demo",
-    "deps": ["Pillow", "numpy", "openpyxl", "matplotlib"]
+    "deps": [
+      "Pillow",
+      "numpy",
+      "openpyxl",
+      "matplotlib"
+    ]
   },
   "artifacts": [
     "out/保真校验对比图.png",
@@ -109,17 +167,43 @@
     "out/fidelity.json"
   ],
   "thresholds": {
-    "长宽比偏差%": {"合格": "<=1.0", "警告": "<=3.0", "不合格": ">3.0"},
-    "主色ΔE00": {"合格": "<3.0", "警告": "<6.0", "不合格": ">=6.0"},
-    "边缘扩散宽度px": {"合格": ">=0.5", "警告": ">=0.2", "不合格": "<0.2"},
-    "结构差异块占比%": {"合格": "<=2.0", "警告": "<=8.0", "不合格": ">8.0"},
-    "主体面积变化%": {"合格": "<=1.0", "警告": "<=5.0", "不合格": ">5.0"}
+    "长宽比偏差%": {
+      "合格": "<=1.0",
+      "警告": "<=3.0",
+      "不合格": ">3.0"
+    },
+    "主色ΔE00": {
+      "合格": "<3.0",
+      "警告": "<6.0",
+      "不合格": ">=6.0"
+    },
+    "边缘扩散宽度px": {
+      "合格": ">=0.5",
+      "警告": ">=0.2",
+      "不合格": "<0.2"
+    },
+    "结构差异块占比%": {
+      "合格": "<=2.0",
+      "警告": "<=8.0",
+      "不合格": ">8.0"
+    },
+    "主体面积变化%": {
+      "合格": "<=1.0",
+      "警告": "<=5.0",
+      "不合格": ">5.0"
+    }
   },
   "constraints": {
     "metric_source": "script",
     "no_manual_compute": true,
     "ai_label_required": true,
     "human_review_required": true,
-    "semantic_check_required": ["Logo 字形", "纹理工艺", "材质表现", "结构拓扑"]
+    "semantic_check_required": [
+      "Logo 字形",
+      "纹理工艺",
+      "材质表现",
+      "结构拓扑"
+    ],
+    "external_api_required": false
   }
 }

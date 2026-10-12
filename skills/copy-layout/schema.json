@@ -81,6 +81,7 @@
     "douyin_text_area_max": "20%",
     "taobao_main_image_text": "除品牌 Logo 外禁文字",
     "ai_label_required": true,
-    "human_review_required": true
+    "human_review_required": true,
+    "external_api_required": false
   }
 }

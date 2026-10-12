@@ -113,3 +113,12 @@ background noise, gray background, gradient background, shadow, watermark, text,
 ---
 
 *本技能遵循 [bangwozuo 数字员工资产规范](https://github.com/bangwozuo/digital-employee-spec) v3.0*
+
+## 输出规格（字段清单）
+
+| 字段 | 说明 |
+|------|------|
+| `image_prompt` | 可直接投喂图像模型的正向提示词 |
+| `negative_prompt` | 需排除的元素 |
+| `quality_check` | 产出后需要检查的项（保真度、光影、比例等） |
+| `note` | 本资产只产出指令，实际出图需用户在图像工具中执行 |
